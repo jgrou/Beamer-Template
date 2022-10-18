@@ -1,0 +1,68 @@
+\documentclass{beamer}
+\usepackage[english]{babel}
+\usepackage{calc}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{MnSymbol,wasysym}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+\setbeamertemplate{navigation symbols}{} % remove navigation symbols
+\mode<presentation>{\usetheme{tud}}
+
+% BIB SETTINGS
+\usepackage[backend=bibtex,firstinits=true,maxnames=30,maxcitenames=20,url=false,style=authoryear]{biblatex}
+\bibliography{bibfile}
+\setlength\bibitemsep{0.3cm} % space between entries in the reference list
+\renewcommand{\bibfont}{\normalfont\scriptsize}
+\setbeamerfont{footnote}{size=\tiny}
+\renewcommand{\cite}[1]{\footnote<.->[frame]{\fullcite{#1}}}
+
+\title[Title]{The Title of the Presentation}
+\institute[TUD]{Delft University of Technology, The Netherlands}
+\author{Jasper Rou}
+\date{16-10-1999}
+
+\begin{document}
+{\setbeamertemplate{footline}{\usebeamertemplate*{minimal footline}}
+\frame{\titlepage}}
+
+{\setbeamertemplate{footline}{\usebeamertemplate*{minimal footline}}}
+
+\section{First section}
+\begin{frame}{Example frame 1}
+This is the first frame
+\end{frame}
+
+\section{Second section}
+\begin{frame}{Example frame 2}
+\begin{block}{Example block}
+\begin{itemize}
+\item item 1
+\item item 2
+\end{itemize}
+\end{block}
+\end{frame}
+
+{\setbeamertemplate{footline}{\usebeamertemplate*{minimal footline}}
+\frame{
+	\begin{center}
+		{\color{tudCyan}\Large\inserttitle}\\
+		\vspace{0.5cm}
+		{\small\insertauthor}\\
+		\vspace{0.8cm}
+		{\scriptsize\insertinstitute}\\
+		\vspace{0.5cm}
+		{\scriptsize\insertdate} \\
+        \vspace{0.5cm}
+        {\scriptsize \href{mailto:j.g.rou@tudelft.nl}{j.g.rou@tudelft.nl}} \hspace{2cm} {\scriptsize \url{www.jasperrou.nl}}
+	\end{center}
+}}
+
+\end{document}
